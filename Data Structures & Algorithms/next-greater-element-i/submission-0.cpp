@@ -1,0 +1,20 @@
+class Solution {
+public:
+    vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+        int n = nums2.size();
+        vector<int> res;
+        for(int num : nums1){
+            int next = -1;
+            for(int i = n - 1; i >= 0; i--){
+                if(nums2[i] > num){
+                    next = nums2[i];
+                }
+                else if(nums2[i] == num){
+                    break;
+                }
+            }
+            res.push_back(next);
+        }
+        return res;
+    }
+};
